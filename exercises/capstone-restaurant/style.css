@@ -20,7 +20,7 @@
    2. body — font-family sans-serif, background #faf8f5, color #333
    */
    body {
-  font-family: sans-serif;
+  font-family: sans-serif, sans-serif;
   background-color: #faf8f5;
   color: #333;
 }/*

@@ -9,6 +9,7 @@
 
    TASKS:
    1. :root — define 5 CSS custom properties (--primary, --secondary, --accent, --bg, --text)
+   
    2. body — background var(--bg), color var(--text), font-family sans-serif
    3. .site-header — background var(--primary), padding, white text
    4. .site-header a — color white, no underline, hover underline
@@ -17,3 +18,67 @@
    7. .btn-secondary — background transparent, border var(--secondary), color var(--secondary)
    8. .site-footer — background var(--secondary), white text, text-align center, padding
    ============================================ */
+
+:root {
+   --primary: #c6a3fd;
+   --secondary: #c6a3fd; 
+   --accent: #0580fc;
+   --bg:#ffffff; 
+   --text: #c6a3fd; }
+
+  body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.site-header {
+  background: var(--primary);
+  color:#ffffff;
+  padding: 20px;
+  text-align: center;
+}
+   .site__header
+   
+   .site-header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+   .site-header a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  align-content: center;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.site-footer {
+  background: var(--secondary);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 20px;
+}
