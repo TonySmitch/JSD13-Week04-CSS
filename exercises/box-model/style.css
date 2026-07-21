@@ -1,0 +1,9 @@
+div {
+  padding:50px 64px 72px;
+  box-sizing:border-box;
+  border: 6cm;
+  border-color: blueviolet;
+  border-style: dashed;
+  border-radius: 20%;
+}
+
