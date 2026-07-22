@@ -15,7 +15,7 @@ body{
 .container{
     width:900px;
     background:rgb(65, 147, 255);
-    border:1px solid #999;
+    border:1px solid #030303;
     padding:25px;
 }
 
@@ -33,12 +33,12 @@ h1{
 
 .boxes{
     display:flex;
-    gap:20px;               /* ระยะห่างระหว่างกล่อง */
+    gap:20px;               
     justify-content:space-between;
 }
 
 .box{
-    flex:1;                 /* แต่ละกล่องกว้างเท่ากัน */
+    flex:1;                 
     border:2px solid red;
     padding:12px;
 }
@@ -66,7 +66,7 @@ h1{
 
 .blue{
     background:#ffd84d;
-    color:#000000;
+    color:#ffffff;
 }
 
 .green{
