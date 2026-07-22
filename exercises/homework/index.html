@@ -1,67 +1,71 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox 3 Columns</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impact Dashboard Layout</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=montserrat:wght@300;400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+  <div class="dashboard-container">
+    <p class="subtitle">BREADTH, DEPTH & DURABILITY</p>
+    <h1 class="main-title">Our impact comes from advancing three areas simultaneously</h1>
 
-    <h4>BREADTH, DEPTH & DURABILITY</h4>
-    <h1>Our impact comes from advancing three areas simultaneously</h1>
+  
+    <div class="cards-grid">
+      
+     
+      <div class="card">
+        <h2 class="card-title">Breadth</h2>
+        <p class="card-desc">Our annual and cumulative volume of graduates around the world</p>
+        
+        <div class="badge badge-blue">130,663</div>
+        <p class="stat-label">graduates across 17 countries since launching in 2015</p>
 
-    <div class="boxes">
+        <div class="badge badge-blue">405,055</div>
+        <p class="stat-label" style="margin-bottom: 0;">family members indirectly supported</p>
+      </div>
 
-        <div class="box">
-          
-            <h3>ความลับที่ 1 ลายของแมวสีส้ม</h3>
-            <div class="blue"><p><strong>หลายคนอาจจะยังไม่รู้ว่าหนึ่งในเสน่ห์ของแมวส้มก็คือลายบนตัวของน้อง ลักษณะภายนอกของน้องแมวจะขึ้นอยู่กับสายพันธุ์</strong></p>
+  
+      <div class="card">
+        <h2 class="card-title">Depth</h2>
+        <p class="card-desc">Our employment and income outcomes within 3 and 6 months of program completion</p>
+        
+        <div class="badge badge-green">82%</div>
+        <p class="stat-label">of graduates placed in jobs within six months of program completion (73% at three months)</p>
 
-            <h3>ความลับที่ 2 หน้าผากรูปตัว M</h3>
-            <p><strong>เรียกได้ว่าเป็นหนึ่งในลักษณะเด่นของแมวส้มเลยก็ว่าได้สำหรับหน้าผากรูปตัว M ซึ่งเป็นลักษณะเด่นที่หลายคนอาจมองข้ามไป ทั้งที่เป็นสิ่งที่มองเห็นได้อย่างชัดเจน </strong></p>
+        <div class="badge badge-green">$1.5 billion</div>
+        <p class="stat-label" style="margin-bottom: 0;">in cumulative wages earned by graduates since 2015</p>
+      </div>
 
-            <h3>ความลับที่ 3 นิสัยแปลก</h3>
-            <p><strong>หลายคนพูดถึงนิสัยแมวส้มเอาไว้ว่า เป็นแมวที่มาพร้อมกับนิสัยสุดแปลก เพราะจุดเด่นที่เห็นชัดเจนความสุภาพ เรียบร้อย และเป็นมิตร ซึ่งนับว่าเป็นแมวที่มีบุคลิกน่าค้นหาเป็นอย่างมาก</strong></p></div>
-            
+  
+      <div class="card">
+        <h2 class="card-title">Durability</h2>
+        <p class="card-desc">Sustained employment, income, and well-being outcomes over time.<br><strong>Our alumni 2-5 years after graduation:</strong></p>
+        
+        <div class="durability-group">
+          <div class="durability-item">
+            <div class="badge badge-yellow">76%</div>
+            <p class="stat-label">continue to be employed</p>
+          </div>
+          <div class="durability-item">
+            <div class="badge badge-yellow">58%</div>
+            <p class="stat-label">earn a living wage (20% above minimum wage)</p>
+          </div>
+          <div class="durability-item">
+            <div class="badge badge-yellow">36%</div>
+            <p class="stat-label">are able to save money</p>
+          </div>
         </div>
-
-        <div class="box">
-            <h2>Depth</h2>
-            <p>Employment and income outcomes within 3 and 6 months.</p>
-
-            <div class="number green">82%</div>
-            <p><strong>graduates placed in jobs within six months</strong></p>
-
-            <div class="number green">$1.5 billion</div>
-            <p><strong>cumulative wages earned by graduates</strong></p>
-        </div>
-
-        <div class="box">
-            <h2>Durability</h2>
-            <p>Sustained employment, income and well-being outcomes.</p>
-
-            <div class="small-boxes">
-                <div class="yellow">76%</div>
-                <div class="yellow">58%</div>
-                <div class="yellow">36%</div>
-            </div>
-
-            <div class="labels">
-                <p>continue to be employed</p>
-                <p>earn a living wage</p>
-                <p>able to save money</p>
-            </div>
-        </div>
+      </div>
 
     </div>
-    <button class="btn">More impact →</button>
-   
-    
 
-</div>
+    <!-- Button -->
+    <button class="btn-more">More impact &rarr;</button>
+  </div>
 
 </body>
 </html>

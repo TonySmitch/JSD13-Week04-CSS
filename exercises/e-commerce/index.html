@@ -1,67 +1,76 @@
 <!DOCTYPE html>
-<html lan="en">
+<html lang="th">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Minimal E-Commerce</title>
- <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=montserrat:wght@300;400;600&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
- <header>
-        <a href="#" class="logo">COFFEE.</a>
-        <nav>
-            <a href="#">เมนู</a>
-            <a href="#">โปรโมชัน</a>
-            <a href="#">ค้นหาสาขา</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>รสชาติเรียบง่าย <br>ในทุกเช้าของคุณ</h1>
-            <p>สัมผัสประสบการณ์กาแฟคั่วบดคุณภาพเยี่ยม ออกแบบมาเพื่อคอกาแฟยุคใหม่</p>
-            <a href="#" class="btn-primary">สั่งซื้อเลย</a>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Freshly brewed dark coffee in a white ceramic cup on a warm, welcoming surface, evoking a cozy morning atmosphere">
-        </div>
-    </section>
+  <!-- Header Menu -->
+  <header>
+    <a href="#" class="logo">COFFEE.</a>
+    <nav>
+      <a href="#">เมนู</a>
+      <a href="#">โปรโมชัน</a>
+      <a href="#">ค้นหาสาขา</a>
+    </nav>
+  </header>
 
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>รสชาติเรียบง่าย <br>ในทุกเช้าของคุณ</h1>
+      <p>สัมผัสประสบการณ์กาแฟคั่วบดคุณภาพเยี่ยม ออกแบบมาเพื่อคอกาแฟยุคใหม่</p>
+      <a href="#" class="btn-primary">สั่งซื้อเลย</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Freshly brewed dark coffee">
+    </div>
+  </section>
 
-    <section class="features">
-        <h2 class="section-title">เมนูแนะนำประจำฤดูกาล</h2>
-        <div class="grid">
-            
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" alt="Tall glass of iced Americano with dark espresso and ice cubes, surrounded by fresh coffee beans, cold and refreshing"
-                <div class="card-body">
-                    <h3>Iced Americano</h3>
-                    <p>กาแฟเข้มข้นสกัดสดใหม่ เติมความสดชื่นได้ตลอดทั้งวัน</p>
-                </div>
-            </div>
+  <!-- Products Section -->
+  <section class="features">
+    <h2 class="section-title">เมนูแนะนำประจำฤดูกาล</h2>
+    
+    <!-- สร้างคลาส .container-->
+    <div class="container">
+      
+      <!-- Card 1 เมนูที่ 1 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" alt="Iced Americano">
+        <h3>Iced Americano</h3>
+        <p>กาแฟเข้มข้นสกัดสดใหม่ เติมความสดชื่นได้ตลอดทั้งวัน</p>
+        <a href="#" class="btn">สั่งซื้อ</a>
+      </div>
 
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" alt="Creamy oat milk latte with intricate latte art pattern on the foam surface, warm and inviting, served in a ceramic cup"
-                <div class="card-body">
-                    <h3>Oat Milk Latte</h3>
-                    <p>ลาเต้นมโอ๊ต นุ่มนวล กลมกล่อม สายสุขภาพไม่ควรพลาด</p>
-                </div>
-            </div>
+      <!-- Card 2 เมนูที่ 2-->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" alt="Oat Milk Latte">
+        <h3>Oat Milk Latte</h3>
+        <p>ลาเต้นมโอ๊ต นุ่มนวล กลมกล่อม สายสุขภาพไม่ควรพลาด</p>
+        <a href="#" class="btn">สั่งซื้อ</a>
+      </div>
 
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" alt="Vibrant bright green matcha tea in a traditional ceramic bowl with whisking brush, authentic Japanese preparation, calm and serene"
-                <div class="card-body">
-                    <h3>Matcha Green Tea</h3>
-                    <p>ชาเขียวมัทฉะแท้จากญี่ปุ่น หอมกลิ่นชาธรรมชาติ</p>
-                </div>
-            </div>
+      <!-- Card 3 เมนูที่ 3-->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" alt="Matcha Green Tea">
+        <h3>Matcha Green Tea</h3>
+        <p>ชาเขียวมัทฉะแท้จากญี่ปุ่น หอมกลิ่นชาธรรมชาติ</p>
+        <a href="#" class="btn">สั่งซื้อ</a>
+      </div>
 
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2026 Minimal Coffee Brand. All rights reserved.</p>
-    </footer>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Minimal Coffee Brand. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
