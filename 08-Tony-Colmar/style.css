@@ -1,35 +1,175 @@
-:root {
-  --primary-color: #3f51b5;
-  --text-dark: #333333;
-  --bg-light: #fff;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
+
+:root { 
+  --bg-gray: #d8d8d8; 
+  --border: 1px 
+  solid #d8d8d8; 
+  --pad: 32px 24px; }
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+body 
+{
+   font-family: Arial, sans-serif; 
+   color: #333; 
+   line-height: 1.5; 
+}
+img, video 
+{ 
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+}
+a 
+{ 
+  text-decoration: none; 
+  color: #333; 
+  margin-left: 16px; 
+}
+.mobile 
+{ 
+  display: none; 
+}
+header, footer, .logo, .sidebar .card 
+{ 
+  display: flex; 
+  align-items: center; 
+}
+.hero, .split-sec 
+{ 
+  display: flex; 
+}
+.courses, .thesis 
+{ 
+  padding: var(--pad); 
+  text-align: center; 
+}
+.courses h2, .thesis h2 
+{ 
+  margin-bottom: 32px; 
 }
 
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Header & Footer */
+header 
+{ 
+  justify-content: space-between; 
+  height: 64px; 
+  padding: 0 24px; 
+  position: sticky; 
+  top: 0; 
+  background: #fff; 
+  z-index: 10; 
+}
+.logo 
+{ 
+  gap: 8px;
+}
+.logo img 
+{ 
+  height: 32px;
+ }
+footer 
+{ justify-content: space-between; 
+  padding: 16px 24px; 
+  border-top: var(--border); 
+  font-size: 0.875rem; 
+}
+/* CSS ของ Main Sections */
+.hero { 
+  background: var(--bg-gray); /* กำหนดให้ --bg-gray เท่ากับสีแบคกราวด์*/
+}
+.hero img, .split-sec .main 
+{ 
+  flex: 3; /*สั่งให้ขยาย flex กว้างเป็น 3 เท่า เมื่อเทียบกับกล่องอื่นในแถวเดียวกันที่มีสัดส่วนเป็น 1 (flex: 1)*/
+  padding: var(--pad); /*เป็นการดึงค่าจาก CSS Variable (ตัวแปร) ที่ชื่อว่า --pad มาใช้งาน เช่น ถ้าในเว็บตั้งค่า --pad: 20px; ไว้ บรรทัดนี้ก็จะทำงานเท่ากับ padding: 20px; ทันที*/
+}
+.hero .content 
+{ flex: 2; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  padding: var(--pad); 
+}
+.hero button 
+{ 
+  margin-top: 24px; 
+  padding: 12px; 
+  background: #4a4a4a; 
+  color: #fff; 
+  border: 0; 
+  cursor: pointer; }
+
+.split-sec 
+{ 
+  border-bottom: var(--border); 
+}
+.split-sec .main 
+{ 
+  border-right: var(--border); 
+}
+.split-sec .sidebar 
+{ 
+  flex: 2; 
+  display: flex; 
+  flex-direction: column; }
+.sidebar .card 
+{ 
+  padding: 16px; 
+  border-bottom: var(--border); 
+  gap: 16px; 
+}
+.sidebar .card img 
+{ 
+  width: 35%; 
+  object-fit: cover; 
+}
+.sidebar .card.active 
+{ 
+  background: var(--bg-gray); 
 }
 
-body{
-  font-family: 'Montserrat', Tahoma, Verdana, sans-serif;
-  background-color: #fcfcfc;
-  color: black;
-  line-height: 1.6;
+/* Courses Section */
+.courses 
+{ 
+  background: #f4f4f4; 
+}
+.courses .grid /*เลือกเป้าหมายที่เป็นกล่องคลาส grid ที่ซ้อนอยู่ในคลาส courses */
+{ 
+  display: grid; /*แสดงกริด*/
+  grid-template-columns: repeat(3, 1fr);  /*สั่งให้สร้างคอลัมน์ทั้งหมด 3 คอลัมน์, สัดส่วนความกว้าง 1 ส่วนเท่าๆกัน*/
+  gap: 32px; /*การกำหนด ระยะห่าง ระหว่างกล่องย่อยให้ห่างกัน 32 พิกเซล*/
+}
+.courses .card 
+{ 
+  background: #fff; 
+  text-align: left; 
+}
+.courses .card div 
+{ 
+  padding: 16px; 
 }
 
-.header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  padding: 0 var(--spacing-lg);
-  background-color: white;
-  border-bottom: 2px solid #333333 ;
-  margin-bottom: var(--spacing-md);
+/* Responsive (Mobile <= 768px) */
+@media (max-width: 768px) {
+  .desktop { display: none !important; }
+  .mobile { display: flex; justify-content: space-between; width: 100%; }
+  .hero, .split-sec { flex-direction: column; }
+  .hero img, .split-sec .main { padding: 0; border-right: 0; }
+  
+  .courses .grid { grid-template-columns: 1fr; gap: 8px; }
+  .courses .card { background: var(--bg-gray); padding: 16px; }
+  .courses .card img, .courses .card .desc { display: none; }
 }
-
-.logo
+video {
+  width: 100%;       /* บังคับให้ความกว้างขยายเต็ม 100% ของกล่องที่ครอบอยู่ */
+  height: 100%;      /* ปรับความสูงขยายเต็ม 100% ของกล่องที่ครอบอยู่ */
+  display: block;    /* กำหนดเป็น Block เพื่อตัดช่องว่างด้านล่างของ Element */
+}
+.thesis video,
+.split-sec .main video {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
