@@ -1,175 +1,384 @@
-
-:root { 
-  --bg-gray: #d8d8d8; 
-  --border: 1px 
-  solid #d8d8d8; 
-  --pad: 32px 24px; }
-
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
-}
-body 
-{
-   font-family: Arial, sans-serif; 
-   color: #333; 
-   line-height: 1.5; 
-}
-img, video 
-{ 
-  max-width: 100%; 
-  height: auto; 
-  display: block; 
-}
-a 
-{ 
-  text-decoration: none; 
-  color: #333; 
-  margin-left: 16px; 
-}
-.mobile 
-{ 
-  display: none; 
-}
-header, footer, .logo, .sidebar .card 
-{ 
-  display: flex; 
-  align-items: center; 
-}
-.hero, .split-sec 
-{ 
-  display: flex; 
-}
-.courses, .thesis 
-{ 
-  padding: var(--pad); 
-  text-align: center; 
-}
-.courses h2, .thesis h2 
-{ 
-  margin-bottom: 32px; 
+:root {
+  --primary-color: #3f51b5;
+  --text-dark: #333333;
+  --bg-light: #e0e0e0;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px; 
 }
 
-/* Header & Footer */
-header 
-{ 
-  justify-content: space-between; 
-  height: 64px; 
-  padding: 0 24px; 
-  position: sticky; 
-  top: 0; 
-  background: #fff; 
-  z-index: 10; 
-}
-.logo 
-{ 
-  gap: 8px;
-}
-.logo img 
-{ 
-  height: 32px;
- }
-footer 
-{ justify-content: space-between; 
-  padding: 16px 24px; 
-  border-top: var(--border); 
-  font-size: 0.875rem; 
-}
-/* CSS ของ Main Sections */
-.hero { 
-  background: var(--bg-gray); /* กำหนดให้ --bg-gray เท่ากับสีแบคกราวด์*/
-}
-.hero img, .split-sec .main 
-{ 
-  flex: 3; /*สั่งให้ขยาย flex กว้างเป็น 3 เท่า เมื่อเทียบกับกล่องอื่นในแถวเดียวกันที่มีสัดส่วนเป็น 1 (flex: 1)*/
-  padding: var(--pad); /*เป็นการดึงค่าจาก CSS Variable (ตัวแปร) ที่ชื่อว่า --pad มาใช้งาน เช่น ถ้าในเว็บตั้งค่า --pad: 20px; ไว้ บรรทัดนี้ก็จะทำงานเท่ากับ padding: 20px; ทันที*/
-}
-.hero .content 
-{ flex: 2; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  padding: var(--pad); 
-}
-.hero button 
-{ 
-  margin-top: 24px; 
-  padding: 12px; 
-  background: #4a4a4a; 
-  color: #fff; 
-  border: 0; 
-  cursor: pointer; }
-
-.split-sec 
-{ 
-  border-bottom: var(--border); 
-}
-.split-sec .main 
-{ 
-  border-right: var(--border); 
-}
-.split-sec .sidebar 
-{ 
-  flex: 2; 
-  display: flex; 
-  flex-direction: column; }
-.sidebar .card 
-{ 
-  padding: 16px; 
-  border-bottom: var(--border); 
-  gap: 16px; 
-}
-.sidebar .card img 
-{ 
-  width: 35%; 
-  object-fit: cover; 
-}
-.sidebar .card.active 
-{ 
-  background: var(--bg-gray); 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Courses Section */
-.courses 
-{ 
-  background: #f4f4f4; 
-}
-.courses .grid /*เลือกเป้าหมายที่เป็นกล่องคลาส grid ที่ซ้อนอยู่ในคลาส courses */
-{ 
-  display: grid; /*แสดงกริด*/
-  grid-template-columns: repeat(3, 1fr);  /*สั่งให้สร้างคอลัมน์ทั้งหมด 3 คอลัมน์, สัดส่วนความกว้าง 1 ส่วนเท่าๆกัน*/
-  gap: 32px; /*การกำหนด ระยะห่าง ระหว่างกล่องย่อยให้ห่างกัน 32 พิกเซล*/
-}
-.courses .card 
-{ 
-  background: #fff; 
-  text-align: left; 
-}
-.courses .card div 
-{ 
-  padding: 16px; 
+body {
+  font-family: '-apple-system', BlinkMacSystemFont, Roboto, Oxygen, sans-serif;
+  background-color: #e0e0e0;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/* Responsive (Mobile <= 768px) */
-@media (max-width: 768px) {
-  .desktop { display: none !important; }
-  .mobile { display: flex; justify-content: space-between; width: 100%; }
-  .hero, .split-sec { flex-direction: column; }
-  .hero img, .split-sec .main { padding: 0; border-right: 0; }
-  
-  .courses .grid { grid-template-columns: 1fr; gap: 8px; }
-  .courses .card { background: var(--bg-gray); padding: 16px; }
-  .courses .card img, .courses .card .desc { display: none; }
+/* HEADER & NAVIGATION */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 var(--spacing-lg);
+  background-color: white;
+  border-bottom: 2px solid var(--text-dark);
+  margin-bottom: var(--spacing-xl);
 }
-video {
-  width: 100%;       /* บังคับให้ความกว้างขยายเต็ม 100% ของกล่องที่ครอบอยู่ */
-  height: 100%;      /* ปรับความสูงขยายเต็ม 100% ของกล่องที่ครอบอยู่ */
-  display: block;    /* กำหนดเป็น Block เพื่อตัดช่องว่างด้านล่างของ Element */
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.thesis video,
-.split-sec .main video {
-  width: 100%;
-  height: 100%;
+
+header .logo img {
+  height: 35px;
+  width: auto;
+}
+
+header .logo span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: var(--text-dark);
+}
+
+header nav.desktop {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+header nav.desktop a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+header nav.desktop a:hover {
+  color: var(--text-dark);
+}
+
+/* ซ่อน Mobile Nav ในจอคอม */
+header nav.mobile {
+  display: none;
+}
+
+/* MAIN & HERO SECTION */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.hero {
+  display: flex;
+  background-color: var(--bg-light); 
+  border-radius: 6px;
+  margin-bottom: var(--spacing-xl);
+  overflow: hidden;
+}
+
+.hero img {
+  width: 60%;
+  min-height: 250px;
+  object-fit: cover;
   display: block;
+}
+
+.hero .content {
+  width: 40%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.hero .content h1 {
+  margin-bottom: var(--spacing-md);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.hero .content p {
+  margin-bottom: var(--spacing-md);
+}
+
+.hero .content button {
+  align-self: flex-start; 
+  background-color: var(--text-dark); 
+  color: white; 
+  padding: 8px 16px; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.hero .content button:hover {
+  background-color: var(--primary-color);
+}
+
+/* INFORMATION SECTION (SPLIT-SEC) */
+.split-sec {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.split-sec .main {
+  width: 60%;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: var(--spacing-xl);
+}
+
+.split-sec .main img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.split-sec .main h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.split-sec .main p {
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-sm);
+}
+
+.split-sec .main small {
+  font-size: 0.9rem;
+  color: #888;
+  display: block;
+}
+
+.split-sec .sidebar {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.split-sec .sidebar .card {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 12px;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.split-sec .sidebar .card.active {
+  background-color: #fff;
+  border-color: #c0b9b9;
+}
+
+.split-sec .sidebar .card img {
+  width: 35%;
+  flex-shrink: 0;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: var(--spacing-md);
+}
+
+.split-sec .sidebar .card h3 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.split-sec .sidebar .card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.split-sec .sidebar .card a {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.split-sec .sidebar .card a:hover {
+  text-decoration: underline;
+}
+
+/* 4. COURSES SECTION */
+.courses {
+  margin-bottom: var(--spacing-xl);
+}
+
+.courses h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: 2rem;
+}
+
+.courses .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.courses .card {
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.courses .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.courses .card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.courses .card div {
+  padding: var(--spacing-md);
+}
+
+.courses .card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.courses .card p {
+  color: gray;
+  font-size: 0.85rem;
+}
+
+.courses .card .desc {
+  margin-top: var(--spacing-sm);
+  color: var(--text-dark);
+}
+
+/* 5. THESIS SECTION */
+.thesis {
+  margin-bottom: var(--spacing-xl);
+}
+
+.thesis h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: 2rem;
+}
+
+.thesis .split-sec .main video {
+  width: 100%;
+  height: 80%;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* FOOTER */
+footer {
+  background-color: white;
+  border-top: 1px solid #ddd;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  margin: 0;
+  color: gray;
+  font-size: 0.9rem;
+}
+
+footer div {
+  display: flex;
+  gap: 20px;
+}
+
+footer div a {
+  color: gray;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+footer div a:hover {
+  color: var(--primary-color);
+}
+
+/* RESPONSIVE DESIGN (MOBILE: MAX-WIDTH 768px)*/
+@media (max-width: 768px) {
+  /* สลับ Navigation สำหรับมือถือ */
+  .desktop {
+    display: none !important;
+  }
+
+  header nav.mobile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  header nav.mobile img {
+    height: 28px;
+  }
+
+  /* ปรับ Hero เป็นแนวตั้ง */
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero img, 
+  .hero .content {
+    width: 100%;
+  }
+
+  /* ปรับ Section แบบแบ่งคอลัมน์ให้กลายเป็นแถวเดียว */
+  .split-sec {
+    flex-direction: column;
+  }
+
+  .split-sec .main, 
+  .split-sec .sidebar {
+    width: 100%;
+  }
+
+  /* ปรับ Grid คอร์สเรียนเหลือ 1 คอลัมน์ */
+  .courses .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .courses .card img, 
+  .courses .card .desc {
+    display: none; /* ซ่อนรูปและรายละเอียดตามโครงสร้างสไตล์มือถือ */
+  }
+
+  .courses .card {
+    background: var(--bg-light);
+  }
 }
